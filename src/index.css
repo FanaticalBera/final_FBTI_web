@@ -5,6 +5,32 @@
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
+@font-face {
+  font-family: 'BMJUA';
+  src: url('/fonts/BMJUA_ttf.ttf') format('truetype');
+  /* fallback로 ttf 추가 가능 */
+  /* src: url('/fonts/BMJUA.ttf') format('truetype'); */
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('/fonts/GmarketSansTTFMedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GmarketSansBold';
+  src: url('/fonts/GmarketSansTTFBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 @layer base {
   :root {
@@ -96,9 +122,14 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  :root {
+    --app-body-font: 'GmarketSansMedium', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  }
+
+
   body {
     @apply bg-background text-foreground;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+    font-family: var(--app-body-font);
   }
 }
 
@@ -126,40 +157,6 @@ All colors MUST be HSL.
     to {
       opacity: 1;
     }
-  }
-
-  @font-face {
-    font-family: 'BMJUA';
-    src: url('/fonts/BMJUA.woff2') format('woff2');
-    /* fallback로 ttf 추가 가능 */
-    /* src: url('/fonts/BMJUA.ttf') format('truetype'); */
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('/fonts/GmarketSansMedium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'GmarketSansBold';
-    src: url('/fonts/GmarketSansBold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  :root {
-    --app-body-font: 'GmarketSansMedium', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-  }
-
-  body {
-    font-family: var(--app-body-font);
   }
 
 

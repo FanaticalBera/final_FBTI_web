@@ -21,7 +21,7 @@ const Landing = () => {
           <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-primary/20 mb-6">
             <Footprints className="w-12 h-12 text-primary" strokeWidth={2.5} />
           </div>
-          <h1 className="text-5xl font-bold mb-3 text-foreground">
+          <h1 className="text-5xl mb-3 text-foreground font-display">
             FBTI
           </h1>
           <p className="text-lg text-muted-foreground">
@@ -57,7 +57,7 @@ const Landing = () => {
         </div>
 
         <p className="text-center text-sm text-muted-foreground mt-8">
-          발의 모양으로 당신의 성격을 분석합니다
+          당신의 발은 어떤 성격을 숨기고 있을까요?
         </p>
       </div>
     </div>
