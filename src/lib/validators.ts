@@ -1,4 +1,4 @@
-export function isVaildUserName(s: string): boolean { 
+export function isValidUserName(s: string): boolean { 
     const t = (s || "").trim();
     if(t.length < 2 || t.length > 20) return false; 
 

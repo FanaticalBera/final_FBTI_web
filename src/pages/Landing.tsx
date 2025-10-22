@@ -2,14 +2,17 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { isVaildUserName } from "@/lib/validators";
+import { isValidUserName } from "@/lib/validators";
 import { Footprints } from "lucide-react";
+import useDisableBack from "@/hooks/useDisableBack";
 
 const Landing = () => {
+  useDisableBack(true); 
+
   const [name, setName] = useState("");
   const navigate = useNavigate();
 
-  const ok = isVaildUserName(name); 
+  const ok = isValidUserName(name); 
 
   const handleStart = () => {
     if (!ok) return; 
