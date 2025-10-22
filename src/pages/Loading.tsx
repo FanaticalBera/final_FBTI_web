@@ -40,7 +40,7 @@ const Loading = () => {
           촬영 중입니다
         </h2>
         <p className="text-lg text-muted-foreground mb-8">
-          {userName}님의 발BTI를 분석하고 있어요
+          <span className="text-primary">{userName}</span>님의 발BTI를 분석하고 있어요
         </p>
 
         <div className="flex justify-center gap-2">

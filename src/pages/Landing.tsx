@@ -2,16 +2,18 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { isVaildUserName } from "@/lib/validators";
 import { Footprints } from "lucide-react";
 
 const Landing = () => {
   const [name, setName] = useState("");
   const navigate = useNavigate();
 
+  const ok = isVaildUserName(name); 
+
   const handleStart = () => {
-    if (name.trim()) {
-      navigate("/loading", { state: { userName: name } });
-    }
+    if (!ok) return; 
+    navigate("/loading", { state: { userName: name.trim() }, replace: true });
   };
 
   return (
@@ -41,14 +43,25 @@ const Landing = () => {
                 placeholder="이름"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                onKeyPress={(e) => e.key === "Enter" && handleStart()}
+
+                onKeyDown={(e) =>{
+                  if(e.key == "Enter") {
+                    if (!ok) {
+                      e.preventDefault();
+                      return;
+                    }
+                    e.preventDefault();
+                    handleStart();
+                  }
+                }}
+                // onKeyPress={(e) => e.key === "Enter" && handleStart()}
                 className="h-14 text-lg px-6 bg-background border-2 border-input focus:border-primary transition-colors"
               />
             </div>
 
             <Button
               onClick={handleStart}
-              disabled={!name.trim()}
+              disabled={!ok}
               className="w-full h-14 text-lg font-bold bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
             >
               촬영 시작하기

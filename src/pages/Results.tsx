@@ -15,7 +15,7 @@ const Results = () => {
         {/* Header */}
         <div className="text-center mb-12 slide-up">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
-            {userName}님의 발BTI 결과
+            <span className="text-primary">{userName}</span>님의 발BTI 결과
           </h1>
           <p className="text-lg text-muted-foreground">
             나의 발BTI를 확인해보세요!
